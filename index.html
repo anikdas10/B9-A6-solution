@@ -113,7 +113,7 @@
                 />
                 <button
                 onclick="handleSearchByCategory()"
-                  id="searchPostsBtn"
+                  id="searchPostsBtn" 
                   class="btn rounded-full px-5 bg-primary text-white hover:text-primary hover:bg-blue-950"
                 >
                   Search
@@ -154,6 +154,9 @@
             also you can see by categories and mark as read.
           </p>
         </div>
+        <div class="flex w-full justify-center mt-5">
+              <span id="postLoader" class="loading loading-spinner text-primary"></span>
+            </div>
         <!-- discussions with selections -->
         <div class="flex lg:flex-row flex-col gap-8 my-12">
           <div id="post-container" class="lg:w-8/12 space-y-5">
@@ -161,12 +164,7 @@
            
 
 
-            <div class="flex w-full justify-center">
-              <span
-                id="postLoader"
-                class="loading loading-spinner loading-lg lg:mt-24 text-primary hidden"
-              ></span>
-            </div>
+            
             <!-- dynamic content -->
           </div>
           <div class="lg:w-4/12">
@@ -181,8 +179,6 @@
               <div class="space-y-4 *:opacity-70" id="markAsReadContainer">
                 <!-- dynamic content -->
                
-                
-
               </div>
             </div>
           </div>
@@ -227,53 +223,9 @@
         </div>
         <div
           id="latest-post-container"
-          class="flex gap-5 lg:flex-row flex-col items-center justify-evenly"
-        >
+          class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-around">
          <!-- show latest post in span tag wihtout dynamic value  -->
-         <div class="card lg:w-96 pb-5 bg-base-100 shadow-2xl">
-          <figure class="lg:px-6 px-4 pt-4 lg:pt-8">
-              <img
-                  src=${e.cover_image}
-                  alt="Shoes"
-                  class="rounded-xl"
-              />
-          </figure>
-          <div class="p-5 lg:p-10 space-y-4 lg:space-y-5">
-              <p class="opacity-50 text-start">
-                  <i class="fa-solid fa-calendar-days me-2"></i>author?.posted_date || "No Publish Date"
-              </p>
-              <h2 class="card-title text-start">title</h2>
-              <p class="text-start">
-                  description
-              </p>
-              <div class="card-actions flex gap-5 items-center">
-                  <div class="avatar">
-                      <div
-                          class="lg:w-12 w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-                      >
-                          <img
-                          src=${e.profile_image}
-                          />
-                      </div>
-                  </div>
-              <div>
-              <h3 class="text-start font-extrabold">author.name</h3>
-              <p class="text-start opacity-60">author?.designation || "Unknown"</p>
-          </div>
-      </div>
-        
-
-          <span
-            id="latestPostLoader"
-            class="loading loading-infinity loading-lg lg:mt-24 text-primary hidden"
-          >
-        
-
-          
-        
-        
-        </span>
-          <!-- dynamic content -->
+         
         </div>
       </section>
     </main>
